@@ -1,0 +1,23 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-left">
+    <h1 class="display-4">DI and Keyed Services</h1>
+    <p>
+        Lines below are rendered by two instances of the same implementation of the same service. The service
+        instances are singletons in this application.
+    </p>
+    <ul>
+        <li>You can get with @Model.ThisString</li>
+        <li>You can get with @Model.ThatString</li>
+    </ul>
+    <p>
+        The difference between service instances is that each service is constructed with different parameters.
+        .NET 8+ provides
+        <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-9.0#keyed-services">Keyed Services</a>
+        in the Dependency Injection framework that can be used to maintain service distinctions.  This makes
+        managing decorator patterns possible without coupling use to implementation through factories as much.
+    </p>
+</div>
